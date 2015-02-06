@@ -71,8 +71,11 @@
           this.checkScore(aPlayer);
         }).bind(this);
       } else {
-        dealer.notify("Wait, is my time.");
+        dealer.notify("I don't like to play now.");
         dealer.play();
+        setTimeout((function(){
+          this.closeOverlay();
+        }).bind(this), 2000);
       }
       nextP++;
       if(nextP >= shuffle.length)
