@@ -71,6 +71,7 @@ var BoardView = function() {
     this.active();
   };
   this.showWinner = function(aPlayer, score){
+    this.hide();
     document.querySelector('.overlay').style.display = "block";
     document.getElementById('show-winner').style.display = "block";
     var playerPhoto = document.createElement('player-photo');
