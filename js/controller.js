@@ -10,6 +10,8 @@
         this.play();
       }).bind(this);
       document.querySelector('.stand').onclick = (function (){
+        var buddy = game.getBuddy(this._buddy)
+        buddy.score.updateStatus(true);
         this.closeOverlay();
       }).bind(this);
       document.querySelector('.close').onclick = (function (){
@@ -26,6 +28,8 @@
     };
     this.checkScore = function(aUserName){
       var score = game.scoreCards(aUserName);
+      var buddy = game.getBuddy(aUserName)
+      buddy.score.updateScore(score);
       if (score > 21) {
         players.removePlayer(aUserName);
         game.removeBuddy(aUserName);
@@ -43,8 +47,8 @@
         this.closeOverlay();
       }
       if (score == 21) {
-        console.log("BlackJack!");
         dealer.notify("BlackJack!\n You win " + aUserName);
+        board.showWinner(aUserName, 21);
       }
     };
     this.playAgain = function() {
@@ -74,12 +78,38 @@
         dealer.notify("I don't like to play now.");
         dealer.play();
         setTimeout((function(){
-          this.closeOverlay();
-        }).bind(this), 2000);
+          this.checkWinner();
+        }).bind(this), 1000);
       }
       nextP++;
-      if(nextP >= shuffle.length)
+      if(nextP >= shuffle.length){
         nextP = 0;
+      }
+    };
+    this.checkWinner = function() {
+      var buddies = game.getBuddies();
+      var stand = 0;
+      var w = 0;
+      var scores = [];
+      var max = [];
+      buddies.forEach(function(value, key, map){
+        scores[w] = key;
+        max[w] =  value.score.value
+        w++;
+        if(value.score.stand)
+          stand++;
+      });
+      if(buddies.size == stand+1){
+        var hight = this.max(max);
+        var index = max.indexOf(hight);
+        dealer.notify("The winner is " + scores[index] + "\nWith a score of " + hight);
+        board.showWinner(scores[index], hight);
+      }else{
+        this.closeOverlay();
+      }
+    };
+    this.max = function(numArray){
+      return Math.max.apply(null, numArray);
     };
     this.dealerNotify = function(){
        dealer.notify(dealer.lastMsg);
@@ -156,10 +186,6 @@
       //document.getElementById('audiotag1').play();
     };
   };
-
-  // game.addBuddy('ajsb85');
-  // game.hit('ajsb85');
-  // console.log(game.getBuddy('ajsb85'));
 
   var shuffle = [];
   var nextP = 0;

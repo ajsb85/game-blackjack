@@ -9,9 +9,22 @@ var CardsModel = function() {
   };
 }
 
+var ScoreModel = function() {
+  this.value = null;
+  this.stand = false;
+  this.updateScore = function(aValue) {
+    this.value = aValue;
+  };
+  this.updateStatus = function(aValue) {
+    this.stand = aValue;
+  };
+}
+
 var BuddyModel = function(aUserName) {
   this.twitter = aUserName;
   this.cards = new CardsModel();
+  this.score = new ScoreModel();
+  this.game
 };
 
 var GameModel = function() {
@@ -41,6 +54,9 @@ var GameModel = function() {
   };
   this.getBuddy = function(aUserName) {
     return this._buddies.get(aUserName);
+  };
+  this.getBuddies = function(aUserName) {
+    return this._buddies;
   };
   this.hit = function(aUserName) {
     var buddy = this.getBuddy(aUserName);

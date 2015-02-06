@@ -70,6 +70,18 @@ var BoardView = function() {
     }, 100);
     this.active();
   };
+  this.showWinner = function(aPlayer, score){
+    document.querySelector('.overlay').style.display = "block";
+    document.getElementById('show-winner').style.display = "block";
+    var playerPhoto = document.createElement('player-photo');
+    playerPhoto.setAttribute("player", aPlayer);
+    playerPhoto.setAttribute("top", "-100px");
+    playerPhoto.setAttribute("left", "154px");
+    var winner = document.getElementById('winner');
+    winner.appendChild(playerPhoto);
+    document.getElementById('winner-title').innerHTML = '@' + aPlayer + ' is the new Winner!';
+    document.getElementById('score').innerHTML = 'Score: ' + score;
+  };
   this.active = function() {
     document.querySelector('#fan-out big-card:last-of-type').onclick = function (){
       document.querySelector('#fan-out').classList.toggle('active');

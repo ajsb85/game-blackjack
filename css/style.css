@@ -183,6 +183,31 @@ ul#fan-out.active big-card:nth-of-type(6) /deep/ li {
   top: 3em;
   margin-left: -190px;
 }
+#show-winner {
+  display: none;
+  width: 380px;
+  height: 380px;
+  position: relative;
+  background-position: top left;
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  left: 50%;
+  top: 50%;
+  margin-left: -190px;
+  text-align: center;
+}
+
+h1, .play-again {
+  cursor: pointer;
+  font-weight: bold;
+  color: #e0c961;
+  font-size: 36px;
+  background-color: transparent;
+  border: 0;
+}
+
 #dealer>img {
   position: relative;
   left: 50%;
