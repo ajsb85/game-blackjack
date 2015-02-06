@@ -81,13 +81,13 @@
        dealer.notify(dealer.lastMsg);
     };
     this.play = function() {
-/*       window.onkeyup = function(evt) {
+       window.onkeyup = function(evt) {
         evt = evt || window.event;
         if (evt.keyCode == 27) { 
           controller.leaks();
           controller.nextPlayer();
         }
-      } */
+      } 
       controller.leaks();
       var playerHandlers = document.querySelectorAll('player-handler'), h, handlers = [];
       for (i = 0; i < playerHandlers.length; ++i) {
