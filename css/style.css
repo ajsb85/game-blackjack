@@ -184,7 +184,7 @@ ul#fan-out.active big-card:nth-of-type(6) /deep/ li {
   margin-left: -190px;
 }
 #handlers-parent {
-  overflow: scroll;
+  overflow: auto;
   height: 360px;
 
 }
