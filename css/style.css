@@ -194,7 +194,7 @@ ul#fan-out.active big-card:nth-of-type(6) /deep/ li {
   padding: 0;
   list-style: none;
   left: 50%;
-  top: 50%;
+  top: 40%;
   margin-left: -190px;
   text-align: center;
 }

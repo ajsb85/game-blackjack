@@ -101,7 +101,10 @@ var BoardView = function() {
     var bigCard = document.createElement('big-card');
     var aValue = aBuddy.cards.value[aBuddy.cards.value.length-1];
     var aSymbol = aBuddy.cards.symbol[aBuddy.cards.symbol.length-1];
-    bigCard.setAttribute("value",aValue.toUpperCase());
+    if(aValue == 't')
+      bigCard.setAttribute("value", 10);
+    else
+      bigCard.setAttribute("value", aValue.toUpperCase());
     bigCard.setAttribute("symbol", aSymbol);
     if (aSymbol == '♦'|| aSymbol == '♥')
     bigCard.setAttribute("color", "red");
