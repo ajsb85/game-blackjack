@@ -183,6 +183,11 @@ ul#fan-out.active big-card:nth-of-type(6) /deep/ li {
   top: 3em;
   margin-left: -190px;
 }
+#handlers-parent {
+  overflow: scroll;
+  height: 360px;
+
+}
 #show-winner {
   display: none;
   width: 380px;
