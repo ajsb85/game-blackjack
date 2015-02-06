@@ -28,6 +28,7 @@ var SettingsView = function() {
     var playersNumber = document.getElementById('input-number-def').value;
     if(index==1){
       if(playersNumber<1 || playersNumber>15){
+        var dealer = new DealerView();
         dealer.notify("How many players?");
         this.swipe.slide(0, 100);
         document.getElementById('input-number-def').value = 0;
