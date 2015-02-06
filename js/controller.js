@@ -44,6 +44,7 @@
       }
       if (score == 21) {
         console.log("BlackJack!");
+        dealer.notify("BlackJack!\n You win " + aUserName);
       }
     };
     this.playAgain = function() {
