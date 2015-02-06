@@ -1,0 +1,137 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+
+<polymer-element name="player-handler"
+         attributes="player" noscript>
+  <template>
+    <style>
+      .input-group-addon{
+        background-color: #e0c961;
+        border-bottom-color: #e0c961;
+        border-bottom-left-radius: 4px;
+        border-bottom-right-radius: 0px;
+        border-bottom-style: solid;
+        border-bottom-width: 1px;
+        border-collapse: separate;
+        border-image-outset: 0px;
+        border-image-repeat: stretch;
+        border-image-slice: 100%;
+        border-image-source: none;
+        border-image-width: 1;
+        border-left-color: #e0c961;
+        border-left-style: solid;
+        border-left-width: 1px;
+        border-right-color: #e0c961;
+        border-right-style: none;
+        border-right-width: 0px;
+        border-top-color: #e0c961;
+        border-top-left-radius: 4px;
+        border-top-right-radius: 0px;
+        border-top-style: solid;
+        border-top-width: 1px;
+        box-sizing: border-box;
+        color: #000;
+        display: table-cell;
+        font-size: 14px;
+        font-weight: normal;
+        height: 34px;
+        line-height: 14px;
+        padding-bottom: 6px;
+        padding-left: 12px;
+        padding-right: 12px;
+        padding-top: 6px;
+        text-align: center;
+        vertical-align: middle;
+        white-space: nowrap;
+        width: 39px;
+      }
+
+      .form-control{
+        background-image: none;
+        border-bottom-color: #e0c961;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 4px;
+        border-bottom-style: solid;
+        border-bottom-width: 1px;
+        border-collapse: separate;
+        border-image-outset: 0px;
+        border-image-repeat: stretch;
+        border-image-slice: 100%;
+        border-image-source: none;
+        border-image-width: 1;
+        border-left-color: #e0c961;
+        border-left-style: solid;
+        border-left-width: 1px;
+        border-right-color: #e0c961;
+        border-right-style: solid;
+        border-right-width: 1px;
+        border-top-color: #e0c961;
+        border-top-left-radius: 0px;
+        border-top-right-radius: 4px;
+        border-top-style: solid;
+        border-top-width: 1px;
+        box-shadow: rgba(0, 0, 0, 0.0745098) 0px 1px 1px 0px inset;
+        box-sizing: border-box;
+        color: rgb(85, 85, 85);
+        cursor: auto;
+        display: block;
+        float: left;
+        font-size: 14px;
+        font-stretch: normal;
+        font-style: normal;
+        font-variant: normal;
+        font-weight: normal;
+        height: 34px;
+        letter-spacing: normal;
+        line-height: 20px;
+        margin-bottom: 0px;
+        margin-left: 0px;
+        margin-right: 0px;
+        margin-top: 0px;
+        padding-bottom: 6px;
+        padding-left: 12px;
+        padding-right: 12px;
+        padding-top: 6px;
+        position: relative;
+        text-align: start;
+        text-indent: 0px;
+        text-rendering: auto;
+        text-shadow: none;
+        text-transform: none;
+        transition-delay: 0s, 0s;
+        transition-duration: 0.15s, 0.15s;
+        transition-property: border-color, box-shadow;
+        transition-timing-function: ease-in-out, ease-in-out;
+        word-spacing: 0px;
+        writing-mode: lr-tb;
+        z-index: 2;
+        
+        background: transparent;
+        -webkit-appearance: none;
+        display:block;
+        font-weight:normal;
+        color:#bce6c8;
+        border: 1 solid #e0c961;
+        outline: 0;
+      }
+
+      .input-group{
+        border-collapse: separate;
+        box-sizing: border-box;
+        color: rgb(51, 51, 51);
+        display: table;
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        height: 34px;
+        line-height: 20px;
+        margin-bottom: 10px;
+        position: relative;
+        left: 50%;
+        margin-left: -120px;
+      }
+    </style>
+    <div class="input-group">
+      <span class="input-group-addon">@</span>
+      <input type="text" class="form-control" value="{{player}}" placeholder="Username"></input>
+    </div>
+  </template>
+</polymer-element>

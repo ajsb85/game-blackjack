@@ -1,0 +1,110 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+
+<polymer-element name="table-cards"
+         attributes="player cards top left" noscript>
+  <template>
+  <style>
+    .cards {
+        position: absolute;
+        width: 80px;
+        height: 80px;        
+    }
+    .card0 {
+        background-color: #FC8131;
+        margin-left: -15px;
+        margin-top: -15px;
+        z-index: 100;
+    }
+    .card1 {
+        background-color: #DA422A;
+        margin-left: -5px;
+        margin-top: -30px;
+        ms-transform: rotate(25deg);
+        transform: rotate(25deg);
+        webkit-transform: rotate(25deg);
+        z-index: 101;
+    }
+    .card2 {
+        background-color: #FCA440;
+        margin-left: -25px;
+        margin-top: -30px;
+        ms-transform: rotate(-25deg);
+        transform: rotate(-25deg);
+        webkit-transform: rotate(-25deg);
+        z-index: 99;
+    }
+    .card3 {
+        background-color: #FCA440;
+        margin-left: -35px;
+        margin-top: -25px;
+        ms-transform: rotate(-50deg);
+        transform: rotate(-50deg);
+        webkit-transform: rotate(-50deg);
+        z-index: 98;
+    }
+    .card4 {
+        background-color: #DA422A;
+        margin-left: 5px;
+        margin-top: -35px;
+        ms-transform: rotate(50deg);
+        transform: rotate(50deg);
+        webkit-transform: rotate(50deg);
+        z-index: 102;
+    }
+    .card5 {
+        background-color: #DA422A;
+        margin-left: 10px;
+        margin-top: -25px;
+        ms-transform: rotate(75deg);
+        transform: rotate(75deg);
+        webkit-transform: rotate(75deg);
+        z-index: 102;
+    }
+    .card {
+        border: 1px solid #333;
+        border-radius: 3px;
+        cursor: pointer;
+        height: 30px;
+        left: 50%;
+        position: relative;
+        top: 50%;
+        width: 20px;
+    }
+  </style>
+    <div class="cards" style="top: {{top}}; left: {{left}};" id="cards-{{player}}">
+    <template if="{{cards == 1}}">
+      <div class="card card0"></div>
+    </template>
+    <template if="{{cards == 2}}">
+      <div class="card card0"></div>
+      <div class="card card1"></div>
+    </template>
+    <template if="{{cards == 3}}">
+      <div class="card card0"></div>
+      <div class="card card1"></div>
+      <div class="card card2"></div>
+    </template>
+    <template if="{{cards == 4}}">
+      <div class="card card0"></div>
+      <div class="card card1"></div>
+      <div class="card card2"></div>
+      <div class="card card3"></div>
+    </template>
+    <template if="{{cards == 5}}">
+      <div class="card card0"></div>
+      <div class="card card1"></div>
+      <div class="card card2"></div>
+      <div class="card card3"></div>
+      <div class="card card4"></div>
+    </template>
+    <template if="{{cards == 6}}">
+      <div class="card card0"></div>
+      <div class="card card1"></div>
+      <div class="card card2"></div>
+      <div class="card card3"></div>
+      <div class="card card4"></div>
+      <div class="card card5"></div>
+    </template>
+    </div>
+  </template>
+</polymer-element>

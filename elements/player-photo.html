@@ -1,0 +1,58 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+
+<polymer-element name="player-photo"
+         attributes="player top left" noscript>
+  <template>
+  <style>
+    .photo{
+      position: absolute;
+      width: 73px;
+      height: 73px;
+      background-position: center; 
+      background-repeat: no-repeat;
+      -webkit-box-shadow: 0 1px 0 rgba(255,255,255,.2), inset 0 4px 5px rgba(0,0,0,.6), inset 0 1px 0 rgba(0,0,0,.6);
+      -moz-box-shadow: 0 1px 0 rgba(255,255,255,.2), inset 0 4px 5px rgba(0,0,0,.6), inset 0 1px 0 rgba(0,0,0,.6);
+      box-shadow: 0 1px 0 rgba(255,255,255,.2), inset 0 4px 5px rgba(0,0,0,.6), inset 0 1px 0 rgba(0,0,0,.6);
+      -webkit-border-radius: 30em;
+      -moz-border-radius: 30em;
+      border-radius: 30em;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      z-index: 2;
+      cursor: pointer;
+    }
+    
+    .loadOverlay{
+      width: 73px;
+      height: 73px;
+      content: " ";
+      background-image: url(../images/ajax-loader.gif);
+      background-position: center; 
+      background-repeat: no-repeat;
+      position: absolute;
+      z-index: 1;
+    }
+  </style>
+    <!-- background-image: mini (24), normal (48), bigger (73)  -->
+    <template if="{{player == 'dealer'}}">
+      <div class="photo" 
+        style="top: {{top}}; left: {{left}}; background-image: url(../images/dealer@280.png);" 
+        id="photo-{{player}}">
+      </div>
+    </template>
+    <template if="{{player != 'dealer'}}">
+      <template if="{{player != ''}}">
+        <a href="https://twitter.com/{{player}}">
+          <div class="loadOverlay" style="top: {{top}}; left: {{left}};"></div>
+            <div class="photo" 
+              style="top: {{top}}; left: {{left}}; background-image: url(https://twitter.com/{{player}}/profile_image?size=bigger);" 
+              id="photo-{{player}}">
+            
+          </div>
+        </a>
+      </template>
+    </template>
+  </template>
+</polymer-element>

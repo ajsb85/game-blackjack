@@ -1,0 +1,64 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<polymer-element name="big-card"
+         attributes="value symbol color" noscript>
+  <template>
+    <style>
+      
+      li {
+        font-family: Helvetica, Arial, sans-serif;
+        font-weight: normal;
+        width: 148px;
+        height: 210px;
+        background: #ffffff;
+        background: -moz-linear-gradient(-45deg, #ffffff 0%, #ffffff 30%, #bbbbbb 90%);
+        background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, #ffffff), color-stop(30%, #ffffff), color-stop(90%, #bbbbbb));
+        background: -webkit-linear-gradient(-45deg, #ffffff 0%, #ffffff 30%, #bbbbbb 90%);
+        background: -o-linear-gradient(-45deg, #ffffff 0%, #ffffff 30%, #bbbbbb 90%);
+        background: -ms-linear-gradient(-45deg, #ffffff 0%, #ffffff 30%, #bbbbbb 90%);
+        background: linear-gradient(135deg, #ffffff 0%, #ffffff 30%, #bbbbbb 90%);
+        border-radius: 10px;
+        position: absolute;
+        top: 85px;
+        left: 50%;
+        margin: 0 0 0 -74px;
+        -webkit-transform-origin: 50% 300px;
+        -moz-transform-origin: 50% 300px;
+        -ms-transform-origin: 50% 300px;
+        -o-transform-origin: 50% 300px;
+        transform-origin: 50% 300px;
+        /* Safari and Chrome */
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
+        -webkit-transition: 0.5s all ease-in-out;
+        -moz-transition: 0.5s all ease-in-out;
+        transition: 0.5s all ease-in-out;
+      }
+      .card.heart, .card.diamond { color: red; }
+      
+      .card .corner { line-height: 1; overflow: hidden; position: absolute; text-align: center; }
+      .card .corner span { display: block; font-size: 24px; font-weight: bold; }
+      .card .corner .number { font-size: 32px; height: 32px; line-height: 32px; }
+      .card.ten .corner .number { font-size: 24px; letter-spacing: -1.8px; }
+      .card .corner.top { left: 8px; top: 12px; }
+      
+      
+      .card .suit { font-size: 64px; font-weight: bold; height: 60px; line-height: 60px; overflow: hidden; position: absolute; text-align: center; width: 50px; }
+     
+      .card .middle_center { left: 76px; top: 110px;  
+    /*    background-image: url(images/seed.png);
+        background-position: center; 
+        background-repeat: no-repeat;
+        */
+      }
+    </style>
+    <li>
+      <div class="card">
+        <div class="front">
+          <div class="corner top">
+            <span style="color: {{color}}" class="value">{{value}}</span>
+            <span style="color: {{color}}">{{symbol}}</span>
+          </div>
+        </div>
+      </div>
+    </li>
+  </template>
+</polymer-element>

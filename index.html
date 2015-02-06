@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlackJack</title>
+    <meta name="author" content="Alexander J. Salas B. (a.salas@ieee.org)" />
+    <meta name="description" content="BlackJack" />
+    <meta name="keywords" content="BlackJack" />
+    <link rel="shortcut icon" href="favicon.ico">
+    <script src="bower_components/webcomponentsjs/webcomponents.min.js"></script>
+    <script src="libs/swipe.js"></script>
+    <script src="js/model.js"></script>
+    <script src="js/view.js"></script>
+    <script src="js/controller.js"></script>
+    <link rel='stylesheet' href='css/style.css'>
+    <link rel="import" href="elements/player-photo.html">
+    <link rel="import" href="elements/table-cards.html">
+    <link rel="import" href="elements/player-handler.html">
+    <link rel="import" href="elements/big-card.html">
+  </head>
+  <body>
+    <div class="overlay">
+      <div id="dealer">
+        <img src="images/dealer.png" alt="Dealer"></img>
+        <div id="board">
+          <div class='swipe-wrap'>
+            <div>
+              <span class="symbol">♠</span>
+              <span class="title">BlackJack</span>
+              <label for="input-number-def">How many players?</label>
+              <input id="input-number-def" class="def" type="number" min="1" max="15" />
+            </div>
+            <div>
+              <label>Twitter Handlers of Players</label>
+              <div id="handlers">
+              </div>
+              <br>
+            </div>
+            <div>
+              <label>Rules of the Game</label>
+              <ul>
+                <li>Dealer shuffle deck</li>
+                <li>Dealer deals 2 cards per player</li>
+                <li>Dealer declares win/loss/players out of game</li>
+                <li>One at a time, players in the game can either (repeatable)</li>
+                <ul>
+                  <li>Keep the cards they have or</li>
+                  <li>Get dealt another card</li>
+                  <li>Dealer declares win/loss/players out of game</li>
+                </ul>
+              </ul>
+            </div>
+            <div>
+              <label>BlackJack strategy</label>
+              <ul>
+                <li>
+                  <a href="http://en.wikipedia.org/wiki/Blackjack#Basic_strategy" target="_blank">http://en.wikipedia.org/wiki/Blackjack#Basic_strategy</a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <label>Please welcome</label>
+              <button class="play">Play</button>
+            </div>
+          </div>
+          <button class="left">◄</button>
+          <button class="right">►</button>
+        </div>
+      </div>
+      <div id="fan-board">
+        <ul id="fan-out">
+        </ul>
+        <button class="hit">Hit</button>
+        <button class="close">X</button>
+        <button class="stand">Stand</button>
+      </div>
+    </div>
+    <div class="container">
+      <div id="parentdiv">
+        <div id="table">
+        </div>
+      </div>
+    </div>
+    <audio id="audiotag1" src="sounds/beep.mp3" preload="auto"></audio>
+  </body>
+</html>
