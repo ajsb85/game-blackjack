@@ -51,8 +51,11 @@ var BoardView = function() {
     for (var i = 0; i < aBuddy.cards.value.length; ++i) {
       var bigCard = document.createElement('big-card');
       var aValue = aBuddy.cards.value[i];
+      if(aValue == 't')
+        bigCard.setAttribute("value", 10);
+      else
+        bigCard.setAttribute("value", aValue.toUpperCase());
       var aSymbol = aBuddy.cards.symbol[i];
-      bigCard.setAttribute("value", aValue.toUpperCase());
       bigCard.setAttribute("symbol", aSymbol);
       if (aSymbol == '♦'|| aSymbol == '♥')
       bigCard.setAttribute("color", "red");
